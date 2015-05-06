@@ -70,6 +70,11 @@ function removePoly(poly){
 	poly = [];
 	return false;
 }
+function calcDistance(src, dest) {
+  var tmp = Math.pow(src.lat() - dest.lat(),2);
+  tmp = tmp + Math.pow(src.lng() - dest.lng(), 2);
+  return Math.sqrt(tmp);
+}
 
 
 function makePathOnRoad(path) {
@@ -81,19 +86,35 @@ function makePathOnRoad(path) {
 	});
 	drawpath.setMap(map);
 	var snapPath = [];
-	for (destIdx = 0; destIdx < path.length -1 ; destIdx++){
-		service.route({
-			origin: path.getAt(destIdx).toUrlValue(),
-			destination: path.getAt(destIdx+1).toUrlValue(),
-			travelMode: google.maps.DirectionsTravelMode.DRIVING
-		}, function (result, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				snapPath = snapPath.concat(result.routes[0].overview_path);
-        drawpath.setPath(snapPath);
-			} else console.log("Direction request failed: " + status);
-		});
-	}
-  polylines.push(drawpath);
+  var tmpPath = [];
+  var request = {
+    origin : path.getAt(0),
+    destination : path.getAt(path.getLength()-1),
+    travelMode : google.maps.DirectionsTravelMode.DRIVING,
+    waypoints : []
+  };
+  for (idx = 1 ; idx < path.getLength() - 1 ; idx++){
+    var way = {location : path.getAt(idx)};
+    request.waypoints = request.waypoints.concat(way);
+  }
+  service.route(request, function (result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      tmpPath = result.routes[0].overview_path;
+      var a = tmpPath[0].lat();
+      console.log("current snapPaht length : " + snapPath.length);
+      if (snapPath.length != 0){
+        snapPath[snapPath.length-1].lat();
+        if (calcDistance(tmpPath[0], snapPath[snapPath.length-1]) > calcDistance(tmpPath[tmpPath.length-1], snapPath[snapPath.length-1])) {
+          console.log("Not equal!");
+          tmpPath.reverse();
+        }
+      } 
+      snapPath = snapPath.concat(tmpPath);
+      drawpath.setPath(snapPath);
+      polylines.push(drawpath);
+    } else console.log("Direction request failed: " + status);
+  });
 }
+
 $(window).load(initialize);
 

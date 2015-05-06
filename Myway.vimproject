@@ -1,5 +1,5 @@
 
-MyWay=/home/ec2-user/choco/MyWay CD=. filter="*" {
+MyWay=/home/ec2-user/MyWay CD=. filter="*" {
  Gemfile
  Gemfile.lock
  Myway.vimproject
