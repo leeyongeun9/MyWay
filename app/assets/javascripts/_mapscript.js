@@ -6,6 +6,11 @@ var snappedCoordinates = [];
 
 function initialize() {
   var mapOptions = {
+    mapTypeControl: false,
+    panControl: false,
+    zoomControlOptions: {
+      position: google.maps.ControlPosition.LEFT_CENTER
+    },
     zoom: 12,
     center: {lat: -33.8667, lng: 151.1955}
   };
@@ -13,10 +18,8 @@ function initialize() {
 
   // Adds a Places search box. Searching for a place will center the map on that
   // location.
-  map.controls[google.maps.ControlPosition.RIGHT_TOP].push(
-      document.getElementById('bar'));
-  var autocomplete = new google.maps.places.Autocomplete(
-      document.getElementById('autoc'));
+  map.controls[google.maps.ControlPosition.RIGHT_TOP].push(document.getElementById('bar'));
+  var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autoc'));
   autocomplete.bindTo('bounds', map);
   autocomplete.addListener('place_changed', function() {
     var place = autocomplete.getPlace();
@@ -34,7 +37,7 @@ function initialize() {
     drawingMode: google.maps.drawing.OverlayType.POLYLINE,
     drawingControl: true,
     drawingControlOptions: {
-      position: google.maps.ControlPosition.TOP_CENTER,
+      position: google.maps.ControlPosition.TOP_LEFT,
       drawingModes: [
         google.maps.drawing.OverlayType.POLYLINE
       ]
