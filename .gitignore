@@ -16,4 +16,4 @@
 /tmp
 
 # Ignore vimproject file
-*.vimproject
+/*.vimproject
