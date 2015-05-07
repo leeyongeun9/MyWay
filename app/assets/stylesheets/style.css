@@ -53,6 +53,9 @@ body { height: 100%; margin: 0; padding: 0 }
 	height: auto;
 	width: 0%;
 }
+.ui-layout-center{
+  padding: 0px;
+}
 .map-container {
   position: absolute;
 	float: bottom;

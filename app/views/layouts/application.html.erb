@@ -14,7 +14,10 @@
 		 src="https://maps.googleapis.com/maps/api/js?libraries=drawing,places"></script>
   <script type="text/javascript">
     $(document).ready(function () {
-        $("body > .screen").layout({ applyDemoStyles: true });
+        $("body > .screen").layout({ 
+applyDemoStyles: false,
+resizable: true,
+initClosed: true});
         });
   </script>
 </head>
