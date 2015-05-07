@@ -1,0 +1,44 @@
+<div ID="loginheader">
+    <a href="/login" ID="logo">
+      <h1> LOGO </h1>
+    </a>
+    <div ID="header_right">
+      <div ID="header_login">
+        <%=form_tag "/login_submit", method: "post" do %>
+          <div ID="header_login_ID"> <h4> 계정ID </h4><input type="text" name="ID" placeholder="" size=25> </div>
+          <div ID="header_login_PW"> <h4> 비밀번호 </h4> <input type="text" name="PW" placeholder="" size=25> </div>
+          <div ID="header_login_submit"> <input type="submit" class="login_submit" class="left" value="로그인"> </div>
+        <% end %>
+      </div>
+      <div ID="header_Signup">
+        <input type="button" class="button_signup" value="회원가입">
+      </div>
+    </div>
+</div>
+<div id="login_blank">
+</div>
+<div id="login_contents">
+  <div ID="service">
+    <div ID="service_image">
+      <%= image_tag("/assets/service.jpg", class: "service_image_img", height: 300, width: 750) %>
+    </div>
+    <div ID="service_explanation"> 
+      <p> 여기는 서비스 설명 공간입니다 </p>
+    </div>
+  </div>
+  <div ID="convenient_signup">
+    <div ID="signup_title">
+      <h2> 간편 가입하기 </h2>
+    </div>
+    <div ID="signup">
+      <%=form_tag "/login_signup", method: "post" do %>
+        <div class="cs_input"> <input type="text" name="NAME" placeholder="사용자 이름" size=60> </div>
+        <div class="cs_input"> <input type="text" name="EMAIL" placeholder="이메일 주소" size=60> </div>
+        <div class="cs_input"> <input type="text" name="PASSWORD" placeholder="비밀번호" size=60> </div>
+        <p> * 영문과 숫자를 조합한 (대문자를 적어도 하나 포함) 8~20글자의 비밀번호를 입력해 주세요 </p>
+        <div class="cs_input"> <input type="submit" class="login_submit" value="MYWAY 회원가입하기"> </div>
+      <% end %>
+      <p> "MYWAY에 회원가입하기"를 클릭하면, 약관 및 개인보호정책에 동의하는 것입니다. </p>
+    </div>
+  </div>
+</div>
