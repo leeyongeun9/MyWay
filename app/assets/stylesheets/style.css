@@ -18,7 +18,7 @@ body { height: 100%; margin: 0; padding: 0 }
   background-color: #444;
   color: #eee;
   border-color: #aaa;
-  z-index: 10;
+  z-index: 100;
 }
 .header .user-container{
   cursor: pointer;
