@@ -7,6 +7,7 @@ html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
 .screen {
   position: relative;
+  padding-top: 60px;
   height: 100%;
   width: 100%;
 }
@@ -54,12 +55,11 @@ body { height: 100%; margin: 0; padding: 0 }
 	width: 0%;
 }
 .ui-layout-center{
-  padding: 0px;
 }
 .map-container {
   position: absolute;
 	float: bottom;
-  padding-top: 60px;
+  //padding-top: 60px;
   height: 100%;
 	width: 100%;
 }
@@ -100,8 +100,7 @@ body { height: 100%; margin: 0; padding: 0 }
   z-index: 11; 
 }
 .arrow {
-
- 
+  transition: all 0.2s ease-in-out; 
 }
 .arrow:hover {  
   transform: scale(1.2);
@@ -110,4 +109,7 @@ body { height: 100%; margin: 0; padding: 0 }
 }
 .ui-layout-east{
   z-index: 10;
+}
+.ui-layout-resizer {
+  background: #444444;
 }
