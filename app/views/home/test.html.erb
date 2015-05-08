@@ -1,27 +1,25 @@
-<div class="screen">
-  <div class="header">
-    <div class="user-container">
-      <div class="user-circle">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+   <div id="header">
+      <div id="logo">
+        <h1>Myway</h1>
       </div>
-      UserName
-    </div>
-  </div>
-  <div class="ui-layout-center" style="padding: 0px;" id="ui-exist">
-    <div class="navi">
-    </div>
-    <div class="map-container">
-      <div id="map_canvas"></div>
-      <div id="bar">
-        <p class="auto"><input type="text" id="autoc"/></p>
-        <p><a id="clear" href="#">Click here</a> to cleare map.</p>
+      <div id="menu">
+        <div class="dropdown">
+          <a id="dLabel" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+            <img src="../../assets/images/user.png">
+          </a>
+
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <li>profile setting</li>
+            <li>Logout</li>
+          </ul>
+        </div>
+
       </div>
+
     </div>
-    <div class="arrow_container">
-      <span class="arrow toggle_button glyphicon glyphicon-triangle-left"></span>
-    </div>
-  </div>
-  <div class="ui-layout-east">
+    <input id="pac-input" class="controls" type="text" placeholder="Search">
+    <div id="map-canvas"></div>
+
     <div id="detail">
       <div id="tabpanel" role="tabpanel">
         <!-- Nav tabs -->
@@ -68,6 +66,5 @@
           <p>스위스 알프스</p>
           <p>유럽여행&#62; 스위스여행&#62; 체르마트 --- 2014.08.16</p>
       </div>
+
     </div>
-  </div>
-</div>
