@@ -1,0 +1,577 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+#header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 80px;
+ /* background-color: #33cccc;*/
+
+  z-index: 10;
+}
+
+#detail {
+  width: 30%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9;
+}
+
+#tabpanel {
+  z-index: 20;
+  position: absolute;
+  top: 90px;
+  right: 130px;
+}
+
+.sort_dropdown {
+  position: absolute;
+  top: 150px;
+  right: 140px;
+}
+
+
+
+.contents {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 75%;
+  width: 30%;
+}
+
+.content {
+  position: relative;
+  right: 0px;
+  border: 1px solid;
+  border-radius: 25px;
+  margin-top:30px;
+  width: 75%;
+  padding: 10px;
+}
+
+#map-canvas {
+  position: absolute;
+  top: 80px;
+  width: 70%;
+  height: 90%;
+  z-index: 8;
+}
+
+#logo {
+  position: absolute;
+  left: 40px;
+
+}
+
+#menu {
+  position: absolute;
+  right: 100px;
+  padding: 10px 0 0 0;
+}
+
+.controls {
+  margin-top: 16px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 20px;
+  margin-right: 13px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 250px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#target {
+  width: 345px;
+ }
+/*
+ * Default Layout Theme
+ *
+ * Created for jquery.layout 
+ *
+ * Copyright (c) 2010 
+ *   Fabrizio Balliano (http://www.fabrizioballiano.net)
+ *   Kevin Dalman (http://allpro.net)
+ *
+ * Dual licensed under the GPL (http://www.gnu.org/licenses/gpl.html)
+ * and MIT (http://www.opensource.org/licenses/mit-license.php) licenses.
+ *
+ * Last Updated: 2010-02-10
+ * NOTE: For best code readability, view this with a fixed-space font and tabs equal to 4-chars
+ */
+
+/*
+ *	DEFAULT FONT
+ *	Just to make demo-pages look better - not actually relevant to Layout!
+ */
+
+body {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size:   100%;
+	*font-size:  80%;
+}
+
+/*
+ *	PANES & CONTENT-DIVs
+ */
+.ui-layout-pane { /* all 'panes' */
+	background:	#FFF; 
+	border:		1px solid #BBB;
+	padding:	10px; 
+	overflow:	auto;
+	/* DO NOT add scrolling (or padding) to 'panes' that have a content-div,
+	   otherwise you may get double-scrollbars - on the pane AND on the content-div
+	   - use ui-layout-wrapper class if pane has a content-div
+	   - use ui-layout-container if pane has an inner-layout
+	*/
+	}
+	/* (scrolling) content-div inside pane allows for fixed header(s) and/or footer(s) */
+	.ui-layout-content {
+		padding:	10px;
+		position:	relative; /* contain floated or positioned elements */
+		overflow:	auto; /* add scrolling to content-div */
+	}
+
+/*
+ *	UTILITY CLASSES
+ *	Must come AFTER pane-class above so will override
+ *	These classes are NOT auto-generated and are NOT used by Layout
+ */
+.layout-child-container,
+.layout-content-container {
+	padding:	0;
+	overflow:	hidden;
+}
+.layout-child-container {
+	border:		0; /* remove border because inner-layout-panes probably have borders */
+}
+.layout-scroll {
+	overflow:	auto;
+}
+.layout-hide {
+	display:	none;
+}
+
+/*
+ *	RESIZER-BARS
+ */
+.ui-layout-resizer	{ /* all 'resizer-bars' */
+	background:		#DDD;
+	border:			1px solid #BBB;
+	border-width:	0;
+	}
+	.ui-layout-resizer-drag {		/* REAL resizer while resize in progress */
+	}
+	.ui-layout-resizer-hover	{	/* affects both open and closed states */
+	}
+	/* NOTE: It looks best when 'hover' and 'dragging' are set to the same color,
+		otherwise color shifts while dragging when bar can't keep up with mouse */
+	.ui-layout-resizer-open-hover ,	/* hover-color to 'resize' */
+	.ui-layout-resizer-dragging {	/* resizer beging 'dragging' */
+		background: #C4E1A4;
+	}
+	.ui-layout-resizer-dragging {	/* CLONED resizer being dragged */
+		border: 	 1px solid #BBB;
+	}
+	.ui-layout-resizer-north-dragging,
+	.ui-layout-resizer-south-dragging {
+		border-width:	1px 0;
+	}
+	.ui-layout-resizer-west-dragging,
+	.ui-layout-resizer-east-dragging {
+		border-width:	0 1px;
+	}
+	/* NOTE: Add a 'dragging-limit' color to provide visual feedback when resizer hits min/max size limits */
+	.ui-layout-resizer-dragging-limit {	/* CLONED resizer at min or max size-limit */
+		background: #E1A4A4; /* red */
+	}
+
+	.ui-layout-resizer-closed-hover	{ /* hover-color to 'slide open' */
+		background: #EBD5AA;
+	}
+	.ui-layout-resizer-sliding {	/* resizer when pane is 'slid open' */
+		opacity: .10; /* show only a slight shadow */
+		filter:  alpha(opacity=10);
+		}
+		.ui-layout-resizer-sliding-hover {	/* sliding resizer - hover */
+			opacity: 1.00; /* on-hover, show the resizer-bar normally */
+			filter:  alpha(opacity=100);
+		}
+		/* sliding resizer - add 'outside-border' to resizer on-hover 
+		 * this sample illustrates how to target specific panes and states */
+		.ui-layout-resizer-north-sliding-hover	{ border-bottom-width:	1px; }
+		.ui-layout-resizer-south-sliding-hover	{ border-top-width:		1px; }
+		.ui-layout-resizer-west-sliding-hover	{ border-right-width:	1px; }
+		.ui-layout-resizer-east-sliding-hover	{ border-left-width:	1px; }
+
+/*
+ *	TOGGLER-BUTTONS
+ */
+.ui-layout-toggler {
+	border: 1px solid #BBB; /* match pane-border */
+	background-color: #BBB;
+	}
+	.ui-layout-resizer-hover .ui-layout-toggler {
+		opacity: .60;
+		filter:  alpha(opacity=60);
+	}
+	.ui-layout-toggler-hover , /* need when NOT resizable */
+	.ui-layout-resizer-hover .ui-layout-toggler-hover { /* need specificity when IS resizable */
+		background-color: #FC6;
+		opacity: 1.00;
+		filter:  alpha(opacity=100);
+	}
+	.ui-layout-toggler-north ,
+	.ui-layout-toggler-south {
+		border-width: 0 1px; /* left/right borders */
+	}
+	.ui-layout-toggler-west ,
+	.ui-layout-toggler-east {
+		border-width: 1px 0; /* top/bottom borders */
+	}
+	/* hide the toggler-button when the pane is 'slid open' */
+	.ui-layout-resizer-sliding  .ui-layout-toggler {
+		display: none;
+	}
+	/*
+	 *	style the text we put INSIDE the togglers
+	 */
+	.ui-layout-toggler .content {
+		color:			#666;
+		font-size:		12px;
+		font-weight:	bold;
+		width:			100%;
+		padding-bottom:	0.35ex; /* to 'vertically center' text inside text-span */
+	}
+
+/*
+ *	PANE-MASKS
+ *	these styles are hard-coded on mask elems, but are also 
+ *	included here as !important to ensure will overrides any generic styles
+ */
+.ui-layout-mask {
+	border:		none !important;
+	padding:	0 !important;
+	margin:		0 !important;
+	overflow:	hidden !important;
+	position:	absolute !important;
+	opacity:	0 !important;
+	filter:		Alpha(Opacity="0") !important;
+}
+.ui-layout-mask-inside-pane { /* masks always inside pane EXCEPT when pane is an iframe */
+	top:		0 !important;
+	left:		0 !important;
+	width:		100% !important;
+	height:		100% !important;
+}
+div.ui-layout-mask {}		/* standard mask for iframes */
+iframe.ui-layout-mask {}	/* extra mask for objects/applets */
+
+/*
+ *	Default printing styles
+ */
+@media print {
+	/*
+	 *	Unless you want to print the layout as it appears onscreen,
+	 *	these html/body styles are needed to allow the content to 'flow'
+	 */
+	html {
+		height:		auto !important;
+		overflow:	visible !important;
+	}
+	body.ui-layout-container {
+		position:	static !important;
+		top:		auto !important;
+		bottom:		auto !important;
+		left:		auto !important;
+		right:		auto !important;
+		/* only IE6 has container width & height set by Layout */
+		_width:		auto !important;
+		_height:	auto !important;
+	}
+	.ui-layout-resizer, .ui-layout-toggler {
+		display:	none !important;
+	}
+	/*
+	 *	Default pane print styles disables positioning, borders and backgrounds.
+	 *	You can modify these styles however it suit your needs.
+	 */
+	.ui-layout-pane {
+		border:		none !important;
+		background:	 transparent !important;
+		position:	relative !important;
+		top:		auto !important;
+		bottom:		auto !important;
+		left:		auto !important;
+		right:		auto !important;
+		width:		auto !important;
+		height:		auto !important;
+		overflow:	visible !important;
+	}
+}
+#loginheader{
+	float: top;
+	height: 80px;
+	width: 100%;
+}
+
+#logo {
+  float: left;
+  margin-left: 20px;
+}
+#header_right {
+	float: left;
+	padding-left: 40%;
+	width: 90%;
+}
+.left {
+	float: left;
+}
+#header_login {
+	float: left;
+	width: 80%;
+}
+#header_login_ID {
+  float: left;
+  width: 40%;
+}
+#header_login_PW {
+  float: left;
+  width: 40%;
+}
+#header_login_submit {
+  width: 15%;
+  float: right;  
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#header_Signup {
+	float: left;
+	width: 90px;
+	padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+}
+
+#login_blank {
+	width: 100%;
+	height: 3%;
+}
+#login_contents {
+  float: bottom;
+  width: 100%;
+  height: 90%;
+}
+#service {
+	float: left;
+	width: 65%;
+  padding: 0 3%;
+}
+
+#service_image {
+}
+
+.service_image_img {
+
+}
+
+#convenient_signup {
+  float: right;
+  width: 35%;
+}
+
+#signup {
+	float: left;
+  padding-right: 30px;
+}
+
+.cs_input {
+  padding: 3px 0;
+}
+
+.login_submit {
+  display: block;
+  background: #0000ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  -moz-border-radius: 2px;
+  border-radius: 2px%;
+  cursor: pointer;
+}
+
+.button_signup {
+  display: block;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  -moz-border-radius: 2px;
+  border-radius: 2px%;
+  cursor: pointer;	
+}
+@import url(//cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
+*{
+  font-family: "Montserrat", 'Nanum Barun Gothic';
+}
+
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+.screen {
+  position: relative;
+  padding-top: 60px;
+  height: 100%;
+  width: 100%;
+}
+.header {
+  position: fixed;
+	float: top;
+	height: 60px;
+	width: 100%;
+  background-color: #444;
+  color: #eee;
+  border-color: #aaa;
+  z-index: 100;
+}
+.header .user-container{
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
+  margin-right: 20px;
+  font-size: 26px;
+  font-style: bold;
+  height: 40px;
+  margin-left: 180px;
+  line-height: 40px;
+}
+.header .user-circle {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+}
+.header .user-circle .glyphicon-user {
+  line-height: 40px;
+  font-size: 26px;
+  position: relative;
+  vertical-align: center; 
+  color: #555;
+}
+.navi {
+	float: left;
+	height: auto;
+	width: 0%;
+}
+.ui-layout-center{
+}
+.map-container {
+  position: absolute;
+	float: bottom;
+  //padding-top: 60px;
+  height: 100%;
+	width: 100%;
+}
+.map-container #map_canvas {
+  width:100%;
+  height:100%;
+}
+#panel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
+#bar {
+  width: 240px;
+  background-color: rgba(255, 255, 255, 0.75);
+  margin: 8px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+#autoc {
+  width: 100%;
+  box-sizing: border-box;
+}
+.arrow_container{
+  position: relative;
+  top: 50%;
+  float: right;
+  padding-right: 5px;
+  font-size: 30px;
+  line-height: 30px;
+  z-index: 11; 
+}
+.arrow {
+  transition: all 0.2s ease-in-out; 
+}
+.arrow:hover {  
+  transform: scale(1.2);
+  color: #55f;
+  cursor: pointer;
+}
+.ui-layout-east{
+  z-index: 10;
+}
+.ui-layout-resizer {
+  background: #444444;
+}
