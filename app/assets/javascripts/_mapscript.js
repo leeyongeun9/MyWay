@@ -65,6 +65,10 @@ function initialize() {
  		removePoly(polylines); 
 		ev.preventDefault;
 	});
+  google.maps.event.addListener(map, 'bounds_changed', function() {
+    var bounds = map.getBounds();
+    searchBox.setBounds(bounds);
+  });
 }
 function removePoly(poly){
 	for (var i = 0; i < poly.length; ++i) {

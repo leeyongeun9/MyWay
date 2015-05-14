@@ -1,11 +1,11 @@
-  <div class="header">
-    <div class="user-container">
-      <div class="user-circle">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      </div>
-      UserName
+<div class="header">
+  <div class="user-container">
+    <div class="user-circle">
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
     </div>
+    UserName
   </div>
+</div>
 <div class="screen">
   <div class="ui-layout-center" style="padding: 0px;" id="ui-exist">
     <div class="navi">
@@ -23,51 +23,49 @@
   </div>
   <div class="ui-layout-east">
     <div id="detail">
-      <div id="tabpanel" role="tabpanel">
+      <div class="tabpanel" role="tabpanel">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab">List</a></li>
           <li role="presentation"><a href="#date" aria-controls="date" role="tab" data-toggle="tab">Date</a></li>
           <li role="presentation"><a href="#line" aria-controls="line" role="tab" data-toggle="tab">Line</a></li>
           <li role="presentation"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">Search</a></li>
+          <li role="presentation" class="sort-tab">
+            <select>
+              <option>최신순으로</option>
+              <option>지도를 중심으로</option>
+            </select>
+          </li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="list">list</div>
-          <div role="tabpanel" class="tab-pane" id="date">date</div>
-          <div role="tabpanel" class="tab-pane" id="line">line</div>
-          <div role="tabpanel" class="tab-pane" id="search">search</div>
-        </div>
-      </div>
-
-      <div class="sort_dropdown">
-        <a id="sort" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-          정렬해서 보기
-          <span class="caret"></span>
-        </a>
-
-        <ul class="dropdown-menu" role="menu" aria-labelledby="sort">
-          <li>최신순으로</li>
-          <li>지도를 중심으로</li>
-        </ul>
-      </div>
-
-
-      <div class="contents">
-        <div class="content">
-          <p>쾰른 대성당 사진</p>
-          <p>유럽여행&#62; 독일여행&#62; 쾰른 ---  2014.08.21</p>
-        </div>
-
-        <div class="content">
-          <p>베를린 장벽 사진</p>
-          <p>유럽여행&#62; 독일여행&#62; 베를린 --- 2014.08.25</p>
-        </div>
-        
-        <div class="content">
-          <p>스위스 알프스</p>
-          <p>유럽여행&#62; 스위스여행&#62; 체르마트 --- 2014.08.16</p>
-      </div>
-    </div>
-  </div>
-</div>
+          <div role="tabpanel" class="tab-pane active" id="list">
+            <div class="contents">
+              <div class="content">
+                <p>쾰른 대성당 사진</p>
+                <p>유럽여행&#62; 독일여행&#62; 쾰른 ---  2014.08.21</p>
+              </div>
+              <div class="content">
+                <p>베를린 장벽 사진</p>
+                <p>유럽여행&#62; 독일여행&#62; 베를린 --- 2014.08.25</p>
+              </div>
+              <div class="content">
+                <p>스위스 알프스</p>
+                <p>유럽여행&#62; 스위스여행&#62; 체르마트 --- 2014.08.16</p>
+              </div>
+            </div><!-- END contents -->
+          </div><!-- END #list content -->
+          <div role="tabpanel" class="tab-pane" id="date">
+            날짜별 리스트
+          </div>
+          <div role="tabpanel" class="tab-pane" id="line">
+            경로별 리스트
+          </div>
+          <div role="tabpanel" class="tab-pane" id="search">
+            컨텐츠 검색
+          </div>
+        </div><!-- END tab-content -->
+      </div><!-- END tab-pannel -->
+    </div><!-- END #detail -->
+  </div><!-- END ui-screen-ease -->
+</div><!-- END screen -->

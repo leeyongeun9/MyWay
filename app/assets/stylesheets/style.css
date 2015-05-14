@@ -3,8 +3,11 @@
   font-family: "Montserrat", 'Nanum Barun Gothic';
 }
 
-html { height: 100% }
-body { height: 100%; margin: 0; padding: 0 }
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 .screen {
   position: relative;
   padding-top: 60px;
@@ -112,4 +115,32 @@ body { height: 100%; margin: 0; padding: 0 }
 }
 .ui-layout-resizer {
   background: #444444;
+}
+
+/* detail view by Hayoung */
+#detail {
+  width: 100%;
+  background-color: #fff;
+}
+
+.tabpanel {
+}
+
+.sort-tab {
+  line-height: 36px;
+}
+
+.contents {
+  margin: 0 10px;
+}
+
+.content {
+  border: 1px solid;
+  border-radius: 25px;
+  margin-top:30px;
+  padding: 10px 25px;
+}
+
+.content p {
+  margin: 10px 0;
 }
