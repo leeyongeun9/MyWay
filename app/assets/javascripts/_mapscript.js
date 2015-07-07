@@ -107,6 +107,7 @@ function makePathOnRoad(path) {
   service.route(request, function (result, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       tmpPath = result.routes[0].overview_path;
+      postPathString(tmpPath.toString());
       var a = tmpPath[0].lat();
       console.log("current snapPaht length : " + snapPath.length);
       if (snapPath.length != 0){
@@ -125,3 +126,6 @@ function makePathOnRoad(path) {
 
 $(window).load(initialize);
 
+function postPathString(path){
+  $.post("/home/index", { path: path } );
+}
