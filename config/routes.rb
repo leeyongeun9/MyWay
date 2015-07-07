@@ -3,6 +3,8 @@ MyWay::Application.routes.draw do
   get "/login/signup" => 'login#signup'
 	get '/' => 'home#index'
   get '/test' => 'home#test'
+  post '/home/index' => 'home#addpath'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
